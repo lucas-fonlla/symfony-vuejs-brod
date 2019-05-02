@@ -23,6 +23,8 @@ services:
       APP_ENV: dev
       APP_SECRET: 8d2a5c935d8ef1c0e2b751147382bc75
       DATABASE_URL: mysql://foo:bar@mysql:3306/foo
+      STARTUP_COMMAND_1: composer install && bin/console doctrine:migrations:migrate --no-interaction
+      STARTUP_COMMAND_2: yarn install && yarn watch &
     volumes:
       - ./app:/var/www/html:rw
 
